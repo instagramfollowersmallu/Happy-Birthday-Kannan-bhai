@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Kannan Bhai!</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: #333;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding: 40px 0;
+            position: relative;
+        }
+        
+        .balloon {
+            width: 50px;
+            height: 70px;
+            background: #ff6b6b;
+            border-radius: 50%;
+            position: absolute;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .balloon:nth-child(2) {
+            background: #4ecdc4;
+            left: 15%;
+            animation-delay: 1s;
+        }
+        
+        .balloon:nth-child(3) {
+            background: #ffe66d;
+            right: 15%;
+            animation-delay: 2s;
+        }
+        
+        .balloon:nth-child(4) {
+            background: #ff9a9e;
+            left: 25%;
+            animation-delay: 3s;
+        }
+        
+        .balloon:nth-child(5) {
+            background: #a8e6cf;
+            right: 25%;
+            animation-delay: 4s;
+        }
+        
+        .balloon::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 15px;
+            background: #333;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        h1 {
+            font-size: 4rem;
+            color: #ff6b6b;
+            text-shadow: 3px 3px 0 #ffe66d;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        /* Video Section */
+        .video-section {
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .video-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .video-caption {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ff6b6b;
+        }
+        
+        /* Photo Gallery */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .photo-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            aspect-ratio: 1;
+        }
+        
+        .photo-item:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+        
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .photo-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .photo-item:hover .photo-caption {
+            transform: translateY(0);
+        }
+        
+        /* Message Section */
+        .message-section {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .message-section h2 {
+            color: #ff6b6b;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+        
+        .message-content {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        /* Cake Section */
+        .cake-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .cake {
+            width: 200px;
+            height: 100px;
+            background: #f8c291;
+            border-radius: 50% 50% 0 0;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+        
+        .cake::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 180px;
+            height: 40px;
+            background: #e55039;
+            border-radius: 50% 50% 0 0;
+        }
+        
+        .candle {
+            width: 10px;
+            height: 40px;
+            background: #fff;
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+        
+        .flame {
+            width: 15px;
+            height: 30px;
+            background: #ff9f43;
+            border-radius: 50% 50% 20% 20%;
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: flicker 0.5s infinite alternate;
+        }
+        
+        @keyframes flicker {
+            0% { transform: translateX(-50%) scale(1); }
+            100% { transform: translateX(-50%) scale(1.1); }
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 20px 20px 0 0;
+        }
+        
+        /* Confetti */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #ff6b6b;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        /* Modal for full-size images */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .photo-gallery {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            .video-container {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+            
+            <h1>Happy Birthday, Kannan Bhai!</h1>
+            <p class="subtitle">Another year older, but definitely not wiser!</p>
+        </header>
+        
+        <!-- Video Section -->
+        <section class="video-section">
+            <h2>Kannan Bhai's Hilarious Moments!</h2>
+            <div class="video-container">
+                <video id="funnyVideo" autoplay muted loop>
+                    <source src="VID-20251006-WA0029.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p class="video-caption">Watch Kannan Bhai's funniest moments! 🤣</p>
+        </section>
+        
+        <section class="message-section">
+            <h2>You're Awesome, Kannan Bhai!</h2>
+            <div class="message-content">
+                <p>Happy birthday to the friend who always knows how to make us laugh, even when we're trying to be serious!</p>
+                <p>Here's to another year of questionable life choices, hilarious adventures, and you somehow managing to survive your own cooking!</p>
+                <p>May your birthday be as amazing as your ability to find the weirdest memes on the internet!</p>
+            </div>
+        </section>
+        
+        <section class="photo-gallery" id="gallery">
+            <!-- Photos will be added here by JavaScript -->
+        </section>
+        
+        <section class="cake-section">
+            <div class="cake">
+                <div class="candle">
+                    <div class="flame"></div>
+                </div>
+            </div>
+            <p>Make a wish, Kannan Bhai! (But not for more cake, we've got that covered)</p>
+        </section>
+        
+        <footer>
+            <p>Made with ❤️ and way too much caffeine for your special day!</p>
+            <p>© 2023 - Your Awesome Friends</p>
+        </footer>
+    </div>
+    
+    <!-- Modal for full-size images -->
+    <div class="modal" id="imageModal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+    
+    <script>
+        // Photo data with all the uploaded images
+        const photos = [
+            { src: 'IMG-20251006-WA0023.jpg', caption: 'The "I just saw something unbelievable" face' },
+            { src: 'IMG-20251006-WA0024.jpg', caption: 'Trying to look serious but failing miserably' },
+            { src: 'IMG-20251006-WA0025.jpg', caption: 'When someone tells a bad joke' },
+            { src: 'IMG-20251006-WA0027.jpg', caption: 'The classic "photobomb" expression' },
+            { src: 'IMG-20251006-WA0032.jpg', caption: 'Caught off guard by the camera' },
+            { src: 'IMG_20251006_190628.jpg', caption: 'Master of funny expressions' }
+        ];
+        
+        // Populate the photo gallery
+        const gallery = document.getElementById('gallery');
+        
+        photos.forEach(photo => {
+            const photoItem = document.createElement('div');
+            photoItem.className = 'photo-item';
+            
+            const img = document.createElement('img');
+            img.src = photo.src;
+            img.alt = photo.caption;
+            
+            const caption = document.createElement('div');
+            caption.className = 'photo-caption';
+            caption.textContent = photo.caption;
+            
+            photoItem.appendChild(img);
+            photoItem.appendChild(caption);
+            
+            // Add click event to open modal
+            photoItem.addEventListener('click', () => {
+                const modal = document.getElementById('imageModal');
+                const modalImg = document.getElementById('modalImage');
+                modal.style.display = 'flex';
+                modalImg.src = photo.src;
+            });
+            
+            gallery.appendChild(photoItem);
+        });
+        
+        // Close modal functionality
+        const modal = document.getElementById('imageModal');
+        const closeModal = document.querySelector('.close-modal');
+        
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+        
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+        
+        // Create confetti effect
+        function createConfetti() {
+            const colors = ['#ff6b6b', '#4ecdc4', '#ffe66d', '#a8e6cf', '#ff9a9e'];
+            
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.top = '-10px';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                confetti.style.width = Math.random() * 10 + 5 + 'px';
+                confetti.style.height = Math.random() * 10 + 5 + 'px';
+                
+                document.body.appendChild(confetti);
+                
+                // Animation
+                const animation = confetti.animate([
+                    { transform: `translateY(0) rotate(0deg)`, opacity: 1 },
+                    { transform: `translateY(${window.innerHeight}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                ], {
+                    duration: Math.random() * 3000 + 2000,
+                    easing: 'cubic-bezier(0.1, 0.2, 0.8, 0.9)'
+                });
+                
+                animation.onfinish = () => {
+                    confetti.remove();
+                };
+            }
+        }
+        
+        // Create confetti on page load and when clicking the header
+        window.addEventListener('load', createConfetti);
+        document.querySelector('header').addEventListener('click', createConfetti);
+        
+        // Add some interactive fun to the cake
+        document.querySelector('.cake').addEventListener('click', function() {
+            this.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 300);
+            
+            // Blow out candle
+            const flame = document.querySelector('.flame');
+            flame.style.animation = 'none';
+            flame.style.opacity = '0';
+            
+            setTimeout(() => {
+                flame.style.animation = 'flicker 0.5s infinite alternate';
+                flame.style.opacity = '1';
+            }, 2000);
+            
+            createConfetti();
+        });
+        
+        // Video controls
+        const funnyVideo = document.getElementById('funnyVideo');
+        
+        // Add click to play/pause functionality for the video
+        funnyVideo.addEventListener('click', function() {
+            if (funnyVideo.paused) {
+                funnyVideo.play();
+            } else {
+                funnyVideo.pause();
+            }
+        });
+    </script>
+</body>
+</html>
